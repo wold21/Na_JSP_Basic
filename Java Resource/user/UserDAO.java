@@ -58,4 +58,21 @@ public class UserDAO {
 		}
 		return -2; // 여기서 -2는 DB의 오류를 의미한다.
 	}
+	
+	// 회원가입 수행 함수 
+	public int join(User user) {
+		String SQL = "INSERT INTO USER VALUES (?, ?, ?, ?, ?)";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, user.getUserID());
+			pstmt.setString(2, user.getUserPassword());
+			pstmt.setString(3, user.getUserName());
+			pstmt.setString(4, user.getUserGender());
+			pstmt.setString(5, user.getUserEmail());
+			return pstmt.executeUpdate(); // 업데이트 쿼리 성공적이라면 -1 이상의 값이 반환됨.
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; // DB오류
+	}
 }
