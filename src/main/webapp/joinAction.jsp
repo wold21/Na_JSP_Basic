@@ -38,6 +38,7 @@
 				script.println("history.back()"); 
 				script.println("</script>");
 			} else {
+				session.setAttribute("userID", user.getUserID()); // 세션값 부여
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
 				script.println("location.href = 'main.jsp'");
@@ -46,9 +47,7 @@
 		}
 	
 		
-	%>
-	%>
-		
+	%>	
 </body>
 </html>
 
