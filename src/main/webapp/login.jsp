@@ -37,10 +37,36 @@
 				</li>
 			</ul>
 		</div>
-		
 	</nav>
+	<div class ="container">
+		<div class ="col-lg-4"></div>
+		<div class ="col-lg-4">
+			<div class ="jumbotron" style="padding-top:20px;">
+				<form method="post" action="loginAction.jsp"> 
+				<!-- post로 하는 이유는 정보를 숨겨서 보내야하기때문 loginAction.jsp라는 페이지로 로그인 정보를 보내겠다는 말-->
+					<h3 style="text-align:center;">로그인 화면</h3>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20"> <!--  길이를 20자로 제한 -->
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
+					</div>
+					<input type="submit" class ="btn btn-primary form-control" value="로그인">
+				</form>
+			</div>
+		<div class ="col-lg-4"></div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="js/bootstrap.js"></script>
   
 </body>
 </html>
+
+
+
+
+
+
+
+
+
