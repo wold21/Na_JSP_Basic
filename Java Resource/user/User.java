@@ -1,6 +1,10 @@
 package user;
 
 public class User {
+	// 자바 빈즈(Java Bean)
+	// 하나의 회원 정보를 담을 수 있는 함수
+	// MVC 모델에서 M을 담당함
+	
 	private String userID;
 	private String userPassword;
 	private String userName;
