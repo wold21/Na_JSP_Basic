@@ -66,24 +66,26 @@
 		</div>
 	</nav>
 	<div class ="container">
-		<form method="post" action="writeAction.jsp">
-			<table class = "table table-striped" style="text-align:center;" border: 1px solid #dddddd> <!--  table-striped -> 홀짝마다 색이 조금 다르게 보여짐-->
-				<thead> <!-- 컬럼을 보여줌-->
-					<tr>
-						<th colspan="2" style="background-color: #eeeeee; text-align:center;">게시판 글쓰기 양식</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><input type="text" class="form-control" placeholder="글 제목" name="tzsTitle" maxlength= "50"></td>
-					</tr>
-					<tr>
-						<td><textarea class="form-control" placeholder="글 내용" name="tzsContent" maxlength= "2048" style="height:350px;"></textarea></td>
-					</tr>
-				</tbody>
-			</table>
-			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
-		</form>
+		<div class ="row">
+			<form method="post" action="writeAction.jsp">
+				<table class = "table table-striped" style="text-align:center; border: 1px solid #dddddd"> <!--  table-striped -> 홀짝마다 색이 조금 다르게 보여짐-->
+					<thead> <!-- 컬럼을 보여줌-->
+						<tr>
+							<th colspan="2" style="background-color: #eeeeee; text-align:center;">게시판 글쓰기 양식</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" class="form-control" placeholder="글 제목" name="tzsTitle" maxlength= "50"></td>
+						</tr>
+						<tr>
+							<td><textarea class="form-control" placeholder="글 내용" name="tzsContent" maxlength= "2048" style="height:350px;"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
+			</form>
+		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="js/bootstrap.js"></script>
