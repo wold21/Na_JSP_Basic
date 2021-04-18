@@ -69,14 +69,16 @@
 	<div class ="container">
 		<div class="jumbotron">
 			<div class="container">
-				<h1>웹사이트</h1>
-				<p>이 웹사이트는 아무것도 없습니다.</p>
-				<p><a class="btn btn-primary btn-pull" href="#" role="button">자세히 알아보기</a></p>
+				<h1>흔적 남기기 프로젝트</h1>
+				<p>사이버 망령 그룹에 흔적을 남겨봅시다.</p>
+				<p><a class="btn btn-primary btn-pull" href="https://github.com/wold21" role="button">제작자 - GitHub</a></p>
 			</div>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="js/bootstrap.js"></script>
+	
+		
 </body>
 </html>
 
