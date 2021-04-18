@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content = "width=device-width", initial-scale="1">
 <link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/custom.css">
 <title>흔적 남기기 게시판</title>
 </head>
 <body>
@@ -65,6 +66,15 @@
 			
 		</div>
 	</nav>
+	<div class ="container">
+		<div class="jumbotron">
+			<div class="container">
+				<h1>웹사이트</h1>
+				<p>이 웹사이트는 아무것도 없습니다.</p>
+				<p><a class="btn btn-primary btn-pull" href="#" role="button">자세히 알아보기</a></p>
+			</div>
+		</div>
+	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="js/bootstrap.js"></script>
 </body>
