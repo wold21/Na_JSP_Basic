@@ -76,7 +76,7 @@ public class TzsDAO {
 		
 		// 게시글 리스트 반환 함수
 		public ArrayList<Tzs> getList(int pageNumber){
-			String SQL = "SELECT * FROM TZS where tzsID < ? and tzsAvailable = 1 order by tzsID decs limit 10";
+			String SQL = "SELECT * FROM TZS where tzsID < ? and tzsAvailable = 1 ORDER BY tzsID DESC LIMIT 10";
 			ArrayList<Tzs> list = new ArrayList<>();
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(SQL);
@@ -117,6 +117,46 @@ public class TzsDAO {
 				e.printStackTrace();
 			}
 			return false;
+		}
+		
+		
+		// 글을 가져와 보여주는 페이지
+		public Tzs getTzs(int tzsID) {
+			String SQL = "SELECT * FROM TZS where tzsID = ?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				pstmt.setInt(1, tzsID); 
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					Tzs tzs = new Tzs();
+					tzs.setTzsID(rs.getInt(1));
+					tzs.setTzsTitle(rs.getString(2));
+					tzs.setUserID(rs.getString(3));
+					tzs.setTzsDate(rs.getString(4));
+					tzs.setTzsContent(rs.getString(5));
+					tzs.setTzsAvailable(rs.getInt(6));
+					return tzs;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return null;
+		}
+		
+		
+		// 수정항목 DB통신 성공한다면 0이상의 값을 반환함
+		public int update(int tzsID, String tzsTitle, String tzsContent) {
+			String SQL = "UPDATE TZS SET tzsTitle = ?, tzsContent = ? WHERE tzsID = ?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				pstmt.setString(1, tzsTitle);
+				pstmt.setString(2, tzsContent);
+				pstmt.setInt(3, tzsID);
+				return pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return -1;
 		}
 }
 
