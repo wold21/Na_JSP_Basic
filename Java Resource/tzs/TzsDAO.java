@@ -158,5 +158,19 @@ public class TzsDAO {
 			}
 			return -1;
 		}
+		
+		
+		// 해당 ID값의 tzsAvailable를 0으로 바꿈으로써 화면상에는 삭제처리하고 DB엔 저장해놓을 수 있다.
+		public int delete(int tzsID) {
+			String SQL = "UPDATE TZS SET tzsAvailable = 0 WHERE tzsID = ?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SQL);
+				pstmt.setInt(1, tzsID);
+				return pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return -1;
+		}
 }
 
