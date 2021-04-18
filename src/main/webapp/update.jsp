@@ -79,7 +79,7 @@
 				<table class = "table table-striped" style="text-align:center; border: 1px solid #dddddd"> <!--  table-striped -> 홀짝마다 색이 조금 다르게 보여짐-->
 					<thead> <!-- 컬럼을 보여줌-->
 						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align:center;">게시판 글 수정 양식</th>
+							<th colspan="2" style="background-color: #eeeeee; text-align:center;">글 수정</th>
 						</tr>
 					</thead>
 					<tbody>

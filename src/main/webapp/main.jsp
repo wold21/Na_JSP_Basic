@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "java.io.PrintWriter" %> 
+<%@ page import = "java.io.PrintWriter" %>
+<%@ page import = "java.util.ArrayList" %>
+<%@ page import = "tzs.Tzs" %>
+<%@ page import = "tzs.TzsDAO" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +20,7 @@
 		if(session.getAttribute("userID") != null){
 			userID = (String)session.getAttribute("userID");
 		}
+		int pageNumber = 0;
 	%>
 	<nav class="navbar navbar-default">
 		<div class="navbar-header">
@@ -74,6 +79,34 @@
 				<p><a class="btn btn-primary btn-pull" href="https://github.com/wold21" role="button">제작자 - GitHub</a></p>
 			</div>
 		</div>
+	</div>
+	<div class ="container">
+		<table class = "table table-striped" style="text-align:center;" border: 1px solid #dddddd> <!--  table-striped -> 홀짝마다 색이 조금 다르게 보여짐-->
+			<thead> <!-- 컬럼을 보여줌-->
+				<tr>
+					<th style="background-color: #eeeeee; text-align:center;">번호</th>
+					<th style="background-color: #eeeeee; text-align:center;">제목</th>
+					<th style="background-color: #eeeeee; text-align:center;">작성자</th>
+					<th style="background-color: #eeeeee; text-align:center;">작성일</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+					TzsDAO tzsDAO = new TzsDAO();
+					ArrayList<Tzs> list = tzsDAO.getList(pageNumber);
+					for(int i=0; i <list.size(); i++){
+				%>
+				<tr>
+					<td><%= list.get(i).getTzsID() %></td>
+					<td><a href="view.jsp?tzsID=<%= list.get(i).getTzsID()%>"><%= list.get(i).getTzsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></a></td>
+					<td><%= list.get(i).getUserID() %></td>
+					<td><%= list.get(i).getTzsDate().substring(0, 11) + list.get(i).getTzsDate().substring(11, 13) + "시" + list.get(i).getTzsDate().substring(14, 16) + "분" %></td>
+				</tr>
+				<% 
+					}
+				%>
+			</tbody>
+		</table>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="js/bootstrap.js"></script>

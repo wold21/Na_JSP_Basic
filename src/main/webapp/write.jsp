@@ -26,7 +26,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="main.jsp">흔적 남기기 게시판</a>
+			<a class="navbar-brand" href="main.jsp">흔적 남기기</a>
 		</div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
@@ -72,7 +72,7 @@
 				<table class = "table table-striped" style="text-align:center; border: 1px solid #dddddd"> <!--  table-striped -> 홀짝마다 색이 조금 다르게 보여짐-->
 					<thead> <!-- 컬럼을 보여줌-->
 						<tr>
-							<th colspan="2" style="background-color: #eeeeee; text-align:center;">게시판 글쓰기 양식</th>
+							<th colspan="2" style="background-color: #eeeeee; text-align:center;">글쓰기 양식</th>
 						</tr>
 					</thead>
 					<tbody>
